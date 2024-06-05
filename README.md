@@ -13,16 +13,18 @@ FooParameterization/
 │   │   └── java/
 │   │       └── org/
 │   │           └── fooparameterization/
-│   │               ├── FooParameterization.java
+│   │               ├── Sphere.java
 │   │               └── Main.java
 │   └── test/
 │       └── java/
 │           └── org/
 │               └── fooparameterization/
-│                   └── FooParameterizationTest.java
+│                   └── SphereTest.java
 ├── .github/
 │   └── workflows/
-│       └── build.yml
+│       ├── publish.yml
+│       ├── spotless.yml
+│       └── test.yml
 └── README.md
 ```
 
