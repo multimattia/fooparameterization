@@ -17,8 +17,8 @@
  */
 package org.fooparameterization;
 
-public class FooParameterization {
-    public double calculateVolumeOfSphere(double radius) {
+public class Sphere {
+    public double calculateVolume(double radius) {
         // Check if the radius is non-negative
         if (radius < 0) {
             throw new IllegalArgumentException("Radius cannot be negative.");
