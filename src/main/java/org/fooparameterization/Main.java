@@ -17,11 +17,34 @@
  */
 package org.fooparameterization;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Sphere sphere = new Sphere();
         double radius = 20;
         double example = sphere.calculateVolume(radius);
         System.out.println("Sphere of size " + radius + " is " + example);
+        Scanner scanner = new Scanner(System.in);
+        boolean continueCalculation = true;
+
+        while (continueCalculation) {
+            System.out.print("Enter the radius of the sphere (or type 'quit' to exit): ");
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("quit")) {
+                continueCalculation = false;
+            } else {
+                try {
+                    double userRadius = Double.parseDouble(input);
+                    double volume = sphere.calculateVolume(userRadius);
+                    System.out.println("The volume of the sphere is: " + volume);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a valid number.");
+                }
+            }
+        }
+
+        scanner.close();
     }
 }
