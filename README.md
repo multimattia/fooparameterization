@@ -59,6 +59,12 @@ To run the unit tests for the project, follow these steps:
    mvn test
    ```
 
+Current test cases:
+
+1. When function `Sphere.calculateVolume()` is given the radius 5.0, test that the value returned is the expected volume 523.59877559829886
+1. When function `Sphere.calculateVolume()` is given the radius -5.0, test that an `IllegalArgumentException` has been thrown.
+1. When function `Sphere.calculateVolume()` is given the radius 1e100, test that an `IllegalArgumentException` has been thrown.
+
 ## CI Pipeline with GitHub Actions
 The project includes a CI pipeline set up using GitHub Actions. The workflow configuration files are located at `.github/workflows/`. The pipeline is triggered on every push to the repository and performs the following steps:
 
@@ -71,7 +77,10 @@ The project includes a CI pipeline set up using GitHub Actions. The workflow con
 The CI pipeline ensures that the project builds successfully, passes all the tests on every code change, and follows Java formatting conventions.
 
 ## Nice-to-haves
-A CD pipeline that will publish the Maven Repository so that others may import this project in their own maven projects.
+A CD pipeline that will publish to the Maven Central Repository so that others may import this project using the `pom.xml` configuration file.
+
+In its stead, a basic CD pipeline has been implementing using GitHub Releases. This pipeline will trigger when a commit with
+a tag starting with v, and will include the `.jar` output in [releases](https://github.com/multimattia/fooparameterization/releases/). See `publish.yml` for the full workflow.
 
 ## License
 This project is licensed under the Apache License 2.0.
